@@ -102,23 +102,46 @@ for (i = 0; i < questionsArray.length; i++) {
 	}
 }
 
-//Identify correct answers and add to correct count
+
+
+//Identify correct answers and add to correct count or incorrect count
+
+
+//psuedo code
+//if answer to question 1 is "Two"
+	//then, increase correct count by one
+
 // if ('#Two').prop("checked", true) {
 // 	correct++;
 // 	console.log(correct);
+
+
+//if answer to question 2 is "Four"
+	//then, increase correct count by one
 
 // if ('#Four').prop("checked", true) {
 // 	correct++;
 // 	console.log(correct);
 
+
+//if answer to question 3 is "Six"
+	//then, increase correct count by one
+
 // if ('#Six').prop("checked", true) {
 // 	correct++;
 // 	console.log(correct);
 
+
+//if answer to question 4 is "Eight"
+	//then, increase correct count by one
+
 // if ('#Eight').prop("checked", true) {
 // 	correct++;
 // 	console.log(correct);
-// } else {
+// } 
+
+//else, increase incorrect count by one
+//	else {
 // 	incorrect++;
 // 	console.log(incorrect);
 // 	}
