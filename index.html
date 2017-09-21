@@ -21,7 +21,7 @@
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="assets/images/favicon_icon.ico" />
 
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- jQuery CDN -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -36,30 +36,30 @@
 </head>
 <body>
 	<div class = "container-fluid">
-		
+
 		<h1 class="title">Trivia Game</h1>
 
 		<div id="timer">
-			<h2>5</h2>
+			<h2>60</h2>
 		</div>
 
-		<div>
+		<div class="remaining">
 			<h3>seconds remaining</h3>
 		</div>
 
-		<button class="btn btn-block btn-primary" id="start" type="button" value="Start">Start</button>
+		<button class="start btn btn-block btn-primary" id="start" type="button" value="Start">
+			Start
+		</button>
 				
 
-		<div class="question-and-answer questions-panel"></div>		
+		<div class="question-and-answer" id="questions-panel"></div>		
 
 
-
-		<button class="btn btn-block btn-primary" id="done" type="button" value="Done">Done</button>
+		<button class="btn btn-block btn-primary" id="done" type="button" value="Done">
+			Done
+		</button>
 
 		<div class="results results-panel"></div>
-
-
-
 
 	</div>
 	<!-- class = "container-fluid" -->
