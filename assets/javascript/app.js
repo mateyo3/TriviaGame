@@ -12,14 +12,6 @@ var questionsArray = [{
 	// Question A
 	name: "firstQuestion",
 	question: "What is 1+1?",
-	// Property Answer 1
-	answer1: "Two",
-	// Property Answer 2
-	answer2: "Four",
-	// Property Answer 3
-	answer3: "Six",
-	// Property Answer 4
-	answer4: "Eight",
 	correct: "Two",
 	},
 
@@ -27,14 +19,6 @@ var questionsArray = [{
 	{
 	name: "secondQuestion",
 	question: "What is 2+2?",
-	// Property Answer 1
-	answer1: "Two",
-	// Property Answer 2
-	answer2: "Four",
-	// Property Answer 3
-	answer3: "Six",
-	// Property Answer 4
-	answer4: "Eight",
 	correct: "Four",
 	},	
 
@@ -42,14 +26,6 @@ var questionsArray = [{
 	{
 	name: "thirdQuestion",
 	question: "What is 3+3?",
-	// Property Answer 1
-	answer1: "Two",
-	// Property Answer 2
-	answer2: "Four",
-	// Property Answer 3
-	answer3: "Six",
-	// Property Answer 4
-	answer4: "Eight",
 	correct: "Six",
 	},
 
@@ -57,14 +33,6 @@ var questionsArray = [{
 	{
 	name: "fourthQuestion",
 	question: "What is 4+4?",
-	// Property Answer 1
-	answer1: "Two",
-	// Property Answer 2
-	answer2: "Four",
-	// Property Answer 3
-	answer3: "Six",
-	// Property Answer 4
-	answer4: "Eight",
 	correct: "Eight",	
 }];		
 console.log(questionsArray);
@@ -92,11 +60,17 @@ function decrement() {
 	if (countdown === 0){
 		stop();
 
-		//go to end page
 		$("#timer").html("<h2>Time's Up!</h2>");
 		console.log("Time is up!")
+
+	//show results page
+	$(".results-panel").toggle('show');
+	$(".question-and-answer").toggle('show');
+
+	
 	}
 }
+
 
 //Stops timer
 function stop() {
@@ -109,7 +83,7 @@ function stop() {
 //display questions in HTML
 for (i = 0; i < questionsArray.length; i++) {
 		
-	var q = $("<div class='question' id='"+ questionsArray[i].name +"'></div>")
+	var q = $("<div class='question' id='"+ questionsArray[i].name +"'></div><br><br>")
 
 	q.text(questionsArray[i].question);
 		console.log(questionsArray[i].question);
@@ -151,9 +125,13 @@ for (i = 0; i < questionsArray.length; i++) {
 
 //OnClick
 //click START button to load questions and start timer
-// $("#start").on("click", function) {
+$(".question-and-answer").hide();
+
+$("#start").on("click", function(){
+	$(".question-and-answer").toggle('show');
 	run();
-// }
+});
+
 
 //CALCULATE correct and incorrect
 //if correct answer is selected in radio button under appropriate question
@@ -167,6 +145,14 @@ for (i = 0; i < questionsArray.length; i++) {
 
 //OnClick 
 //click DONE to hide questions and show results
+$(".results-panel").hide();
+
+$("#done").on("click", function(){
+	$(".results-panel").toggle('show');
+	$(".question-and-answer").toggle('show');
+	stop();
+});
+
 //DISPLAY results in html div
 	var r = $("<div></div>")
 		$(".results").append("<h1>Results</h1>")

@@ -9,8 +9,7 @@
 	</title>
 
 
-	<!--Google API -->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
+
 
 	<!-- Bootstrap CDN -->
 	<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/> -->
@@ -28,13 +27,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-	<!-- Font Awesome Bootstrap CDN -->
-	<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> -->
-
-
-	<!--JS CDN -->
-	<script type="text/javascript" src="assets/javascript/app.js"></script>
-
+	<!--Google API -->
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	
 
 
 
@@ -42,32 +37,36 @@
 <body>
 	<div class = "container-fluid">
 		
-		<h1 class="text-center">Trivia Game</h1>
+		<h1 class="title">Trivia Game</h1>
 
 		<div id="timer">
 			<h2>5</h2>
 		</div>
 
 		<div>
-			<h2>seconds remaining</h2>
+			<h3>seconds remaining</h3>
 		</div>
 
-		<input class="btn btn-block btn-primary" id="start" type="button" value="Start"></input>
+		<button class="btn btn-block btn-primary" id="start" type="button" value="Start">Start</button>
 				
 
-		<div class="question-and-answer"></div>		
+		<div class="question-and-answer questions-panel"></div>		
 
 
 
-		<input class="btn btn-block btn-primary" id="done" type="button" value="Done"></input>
+		<button class="btn btn-block btn-primary" id="done" type="button" value="Done">Done</button>
 
-		<div class="results"></div>
+		<div class="results results-panel"></div>
 
 
 
 
 	</div>
 	<!-- class = "container-fluid" -->
+
+	<!--Javascript -->
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
+
 </body>
 
 </html>
