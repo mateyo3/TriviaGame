@@ -54,20 +54,12 @@ var questionsArray = [{
 }];		
 console.log(questionsArray);
 
+var question0 = ["two", "four", "six", "eight"];
+
+
 // randomize questions
 
 //display questions in HTML
-// $(".question-and-answer").append("<div>"+questionsArray[0].questionA+"</div>");
-// console.log(questionsArray[0].questionA)
-
-// $(".question-and-answer").append("<div>"+questionsArray[1].questionB+"</div>");
-// console.log(questionsArray[1].questionB)
-
-// $(".question-and-answer").append("<div>"+questionsArray[2].questionC+"</div>");
-// console.log(questionsArray[2].questionC)
-
-// $(".question-and-answer").append("<div>"+questionsArray[3].questionD+"</div>");
-// console.log(questionsArray[3].questionD)
 
 
 
@@ -83,6 +75,18 @@ for (i = 0; i < questionsArray.length; i++) {
 	$(".question-and-answer").append(q);
 }
 
+//create radio buttons
+for (k = 0; k < question0.length; k++) {
+	console.log(question0[k]);
+
+	var a = $("<span>" + "<input type='radio' name='q0' value='" + question0[k] +"' >" + question0[k] + "</span>");
+
+	// a.addClass("button");
+
+	// a.text(question0[k]);
+
+	$(".question-and-answer").append(a);
+}
 
 //if Questions 1
 	//then properties get displayed as radio buttons
@@ -122,7 +126,7 @@ function decrement() {
 		stop();
 
 		//go to end page
-		
+		$("#timer").html("<h2>Time's Up!</h2>");
 		console.log("Time is up!")
 	}
 }
@@ -137,12 +141,6 @@ run();
 
 
 
-// function timeUp() {
-//   console.log("done");
-//   $("#timer").append("<h2>Time's Up!</h2>");
-//   console.log("time is up");
-// }
-
 //reset function
 function reset() {
 	var correct = 0;
@@ -151,6 +149,18 @@ function reset() {
 }
 
 
+
+
+	// if (questionsArray[i] === [questionsArray.question]) {
+	// 	for (i = 0; i < question0.length; i++){
+	// 		console.log(question0);
+
+	// 		$("<input type='radio' name='answer' value='"+ question0 + "' >" )
+
+
+	// 		$(".question-and-answer").append(q);
+	// 	}
+	// }
 
 // var questionOne = "What is 2 + 2?"
 // $("#questionOne").html(questionOne);
@@ -176,6 +186,20 @@ function reset() {
 // var question
 
 // // $("#question").html("<p>QuestionOne?<p>");
+
+//display questions in html
+// $(".question-and-answer").append("<div>"+questionsArray[0].questionA+"</div>");
+// console.log(questionsArray[0].questionA)
+
+// $(".question-and-answer").append("<div>"+questionsArray[1].questionB+"</div>");
+// console.log(questionsArray[1].questionB)
+
+// $(".question-and-answer").append("<div>"+questionsArray[2].questionC+"</div>");
+// console.log(questionsArray[2].questionC)
+
+// $(".question-and-answer").append("<div>"+questionsArray[3].questionD+"</div>");
+// console.log(questionsArray[3].questionD)
+
 
 
 });
