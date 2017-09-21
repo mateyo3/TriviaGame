@@ -69,9 +69,7 @@ var question0 = ["two", "four", "six", "eight"];
 
 for (i = 0; i < questionsArray.length; i++) {
 		
-	var q = $("<div id='"+ questionsArray[i].name +"'></div>")
-
-	q.addClass("question");
+	var q = $("<div class='question' id='"+ questionsArray[i].name +"'></div>")
 
 	q.text(questionsArray[i].question);
 		console.log(questionsArray[i].question);
@@ -79,17 +77,29 @@ for (i = 0; i < questionsArray.length; i++) {
 	$(".question-and-answer").append(q);
 
 	//create radio buttons
+	for (k = 0; k < question0.length; k++) {
+	console.log(question0[k]);
+
+	var a = $("<span>" + "<input type='radio' name='q0' value='" + question0[k] +"' >" + question0[k] + "</span>");
+
+	// $("<div id='"+ question0[k] +"'></div>").append(a);
+	$("#"+ questionsArray[i].name).append(a);
+	}
 
 }
 
-	for (k = 0; k < question0.length; k++) {
-		console.log(question0[k]);
 
-		var a = $("<span>" + "<input type='radio' name='q0' value='" + question0[k] +"' >" + question0[k] + "</span>");
 
-		// $("<div id='"+ question0[k] +"'></div>").append(a);
-		$(".question-and-answer").append(a);
-	}
+
+
+	// for (k = 0; k < question0.length; k++) {
+	// 	console.log(question0[k]);
+
+	// 	var a = $("<span>" + "<input type='radio' name='q0' value='" + question0[k] +"' >" + question0[k] + "</span>");
+
+	// 	// $("<div id='"+ question0[k] +"'></div>").append(a);
+	// 	$(".question-and-answer").append(a);
+	// }
 
 
 //if Questions 1
