@@ -3,6 +3,7 @@ $(document).ready(function(){
 // Questions Array
 var questionsArray = [{
 	// Question A
+	name: "firstQuestion",
 	question: "What is 1+1?",
 	// Property Answer 1
 	answer1: "Two",
@@ -16,6 +17,7 @@ var questionsArray = [{
 
 	// Question B
 	{
+	name: "secondQuestion",
 	question: "What is 2+2?",
 	// Property Answer 1
 	answer1: "Two",
@@ -29,6 +31,7 @@ var questionsArray = [{
 
 	// Question C
 	{
+	name: "thirdQuestion",
 	question: "What is 3+3?",
 	// Property Answer 1
 	answer1: "Two",
@@ -42,6 +45,7 @@ var questionsArray = [{
 
 	// Question D
 	{
+	name: "fourthQuestion",
 	question: "What is 4+4?",
 	// Property Answer 1
 	answer1: "Two",
@@ -64,29 +68,29 @@ var question0 = ["two", "four", "six", "eight"];
 
 
 for (i = 0; i < questionsArray.length; i++) {
-	console.log(questionsArray[i]);
-	
-	var q = $("<div></div>");
+		
+	var q = $("<div id='"+ questionsArray[i].name +"'></div>")
 
 	q.addClass("question");
 
 	q.text(questionsArray[i].question);
+		console.log(questionsArray[i].question);
 
 	$(".question-and-answer").append(q);
+
+	//create radio buttons
+
 }
 
-//create radio buttons
-for (k = 0; k < question0.length; k++) {
-	console.log(question0[k]);
+	for (k = 0; k < question0.length; k++) {
+		console.log(question0[k]);
 
-	var a = $("<span>" + "<input type='radio' name='q0' value='" + question0[k] +"' >" + question0[k] + "</span>");
+		var a = $("<span>" + "<input type='radio' name='q0' value='" + question0[k] +"' >" + question0[k] + "</span>");
 
-	// a.addClass("button");
+		// $("<div id='"+ question0[k] +"'></div>").append(a);
+		$(".question-and-answer").append(a);
+	}
 
-	// a.text(question0[k]);
-
-	$(".question-and-answer").append(a);
-}
 
 //if Questions 1
 	//then properties get displayed as radio buttons
