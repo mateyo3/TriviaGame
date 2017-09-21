@@ -3,7 +3,7 @@ $(document).ready(function(){
 // Questions Array
 var questionsArray = [{
 	// Question A
-	questionA: "What is 1+1?",
+	question: "What is 1+1?",
 	// Property Answer 1
 	answer1: "Two",
 	// Property Answer 2
@@ -16,7 +16,7 @@ var questionsArray = [{
 
 	// Question B
 	{
-	questionB: "What is 2+2?",
+	question: "What is 2+2?",
 	// Property Answer 1
 	answer1: "Two",
 	// Property Answer 2
@@ -29,7 +29,7 @@ var questionsArray = [{
 
 	// Question C
 	{
-	questionC: "What is 3+3?",
+	question: "What is 3+3?",
 	// Property Answer 1
 	answer1: "Two",
 	// Property Answer 2
@@ -42,7 +42,7 @@ var questionsArray = [{
 
 	// Question D
 	{
-	questionD: "What is 4+4?",
+	question: "What is 4+4?",
 	// Property Answer 1
 	answer1: "Two",
 	// Property Answer 2
@@ -57,17 +57,33 @@ console.log(questionsArray);
 // randomize questions
 
 //display questions in HTML
-$(".question-and-answer").append(questionsArray[0].questionA);
-console.log(questionsArray[0].questionA)
+// $(".question-and-answer").append("<div>"+questionsArray[0].questionA+"</div>");
+// console.log(questionsArray[0].questionA)
 
-$(".question-and-answer").append(questionsArray[1].questionB);
-console.log(questionsArray[1].questionB)
+// $(".question-and-answer").append("<div>"+questionsArray[1].questionB+"</div>");
+// console.log(questionsArray[1].questionB)
 
-$(".question-and-answer").append(questionsArray[2].questionC);
-console.log(questionsArray[2].questionC)
+// $(".question-and-answer").append("<div>"+questionsArray[2].questionC+"</div>");
+// console.log(questionsArray[2].questionC)
 
-$(".question-and-answer").append(questionsArray[3].questionD);
-console.log(questionsArray[3].questionD)
+// $(".question-and-answer").append("<div>"+questionsArray[3].questionD+"</div>");
+// console.log(questionsArray[3].questionD)
+
+
+
+for (i = 0; i < questionsArray.length; i++) {
+	console.log(questionsArray[i]);
+	
+	var q = $("<div></div>");
+
+	q.addClass("question");
+
+	q.text(questionsArray[i].question);
+
+	$(".question-and-answer").append(q);
+}
+
+
 //if Questions 1
 	//then properties get displayed as radio buttons
 
@@ -92,7 +108,6 @@ var timer;
 //set timer interval
 function run(){
 	timer = setInterval(decrement, 1000);
-	console.log(timer);
 }
 
 //Decrement function
