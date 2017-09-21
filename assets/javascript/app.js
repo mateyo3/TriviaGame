@@ -1,5 +1,12 @@
 $(document).ready(function(){
 
+//variables
+var correct = 0;
+	incorrect = 0;
+	unanswered = 0;
+	countdown = 5;
+	
+
 // Questions Array
 var questionsArray = [{
 	// Question A
@@ -13,6 +20,7 @@ var questionsArray = [{
 	answer3: "Six",
 	// Property Answer 4
 	answer4: "Eight",
+	correct: "Two",
 	},
 
 	// Question B
@@ -27,6 +35,7 @@ var questionsArray = [{
 	answer3: "Six",
 	// Property Answer 4
 	answer4: "Eight",
+	correct: "Four",
 	},	
 
 	// Question C
@@ -41,6 +50,7 @@ var questionsArray = [{
 	answer3: "Six",
 	// Property Answer 4
 	answer4: "Eight",
+	correct: "Six",
 	},
 
 	// Question D
@@ -54,7 +64,8 @@ var questionsArray = [{
 	// Property Answer 3
 	answer3: "Six",
 	// Property Answer 4
-	answer4: "Eight",	
+	answer4: "Eight",
+	correct: "Eight",	
 }];		
 console.log(questionsArray);
 
@@ -62,8 +73,7 @@ var question0 = ["two", "four", "six", "eight"];
 
 
 
-
-
+//timer
 var timer;
 	clearInterval;
 //set timer interval
@@ -94,6 +104,8 @@ function stop() {
     }
 
 
+
+
 //display questions in HTML
 for (i = 0; i < questionsArray.length; i++) {
 		
@@ -115,110 +127,63 @@ for (i = 0; i < questionsArray.length; i++) {
 	}
 }
 
+// if ('#Two').prop("checked", true) {
+// 	correct++;
+// 	console.log(correct);
+
+// if ('#Four').prop("checked", true) {
+// 	correct++;
+// 	console.log(correct);
+
+// if ('#Six').prop("checked", true) {
+// 	correct++;
+// 	console.log(correct);
+
+// if ('#Eight').prop("checked", true) {
+// 	correct++;
+// 	console.log(correct);
+// } else {
+// 	incorrect++;
+// 	console.log(incorrect);
+// 	}
 
 
 
-// $("#done").on("click") {
-
+//OnClick
+//click START button to load questions and start timer
+// $("#start").on("click", function) {
+	run();
 // }
 
+//CALCULATE correct and incorrect
+//if correct answer is selected in radio button under appropriate question
+	//then correct++;
+//else
+	//incorrect++;
 
-	// for (k = 0; k < question0.length; k++) {
-	// 	console.log(question0[k]);
-
-	// 	var a = $("<span>" + "<input type='radio' name='q0' value='" + question0[k] +"' >" + question0[k] + "</span>");
-
-	// 	// $("<div id='"+ question0[k] +"'></div>").append(a);
-	// 	$(".question-and-answer").append(a);
-	// }
-
-
-//if Questions 1
-	//then properties get displayed as radio buttons
-
-//if Questions 2
-	//then properties get displayed as radio buttons
-
-//if Questions 3
-	//then properties get displayed as radio buttons
-
-//if Questions 4
-	//then properties get displayed as radio buttons
+//CALCULATE unanswered questions
+	//unanswered - (correct + incorrect);
 
 
-//Global variables
-var correct = 0;
-	incorrect = 0;
-	unanswered = 0;
-	countdown = 5;
-	
-
-
-run();
-// stop();
-
+//OnClick 
+//click DONE to hide questions and show results
+//DISPLAY results in html div
+	var r = $("<div></div>")
+		$(".results").append("<h1>Results</h1>")
+	//$("#results").append(correct)
+		$(".results").append("<div>" + "correct:" + correct + "</div>");
+	//$("#results").append(incorrect)
+		$(".results").append("<div>" + "incorrect:" + incorrect + "</div>");
+	//$("#results").append(unanswered)
+		$(".results").append("<div>" + "unanswered:" + unanswered + "</div>");
 
 
 //reset function
-function reset() {
-	var correct = 0;
-		incorrect = 0;
-		unanswered = 0;
-}
-
-
-
-
-	// if (questionsArray[i] === [questionsArray.question]) {
-	// 	for (i = 0; i < question0.length; i++){
-	// 		console.log(question0);
-
-	// 		$("<input type='radio' name='answer' value='"+ question0 + "' >" )
-
-
-	// 		$(".question-and-answer").append(q);
-	// 	}
-	// }
-
-// var questionOne = "What is 2 + 2?"
-// $("#questionOne").html(questionOne);
-// console.log("The question is: " + questionOne);
-
-// var choicesArray = ["Two", "Three", "Four", "Five"];
-// console.log(choicesArray);
-
-// //randomize multiple choice questions
-// function randomChoice1() {
-// 	var random = choicesArray[Math.floor(Math.random() * choicesArray.length)];
-// 	console.log(random)
-// }
-
-// randomChoice1();
-
-// //make radio buttons
-// var answers = "button"
-// $(".choice1").text(answers);
-
-// // var selValue = $( 'input[name=rbnNumber]:checked' ).val();
-
-// var question
-
-// // $("#question").html("<p>QuestionOne?<p>");
-
-//display questions in html
-// $(".question-and-answer").append("<div>"+questionsArray[0].questionA+"</div>");
-// console.log(questionsArray[0].questionA)
-
-// $(".question-and-answer").append("<div>"+questionsArray[1].questionB+"</div>");
-// console.log(questionsArray[1].questionB)
-
-// $(".question-and-answer").append("<div>"+questionsArray[2].questionC+"</div>");
-// console.log(questionsArray[2].questionC)
-
-// $(".question-and-answer").append("<div>"+questionsArray[3].questionD+"</div>");
-// console.log(questionsArray[3].questionD)
-
-
-
+	function reset() {
+		var correct = 1;
+			incorrect = 1;
+			unanswered = 1;
+	}
+	
 });
 

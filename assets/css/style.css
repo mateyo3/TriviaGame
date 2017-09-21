@@ -1,6 +1,6 @@
 body{
 	font-family: 'Lato', sans-serif;
-	/*background-image: url("assets/images/graphpaper.jpg");*/
+	background-image: url("https://orig00.deviantart.net/e43b/f/2010/013/c/f/graph_paper_by_rawen713.jpg");
 }
 
 .container-fluid {
@@ -8,5 +8,5 @@ body{
 }
 
 h1{
-	font-color: blue;
+	color: blue;
 }
