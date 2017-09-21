@@ -80,7 +80,7 @@ for (i = 0; i < questionsArray.length; i++) {
 	for (k = 0; k < question0.length; k++) {
 	console.log(question0[k]);
 
-	var a = $("<span>" + "<input type='radio' name='q0' value='" + question0[k] +"' >" + question0[k] + "</span>");
+	var a = $("<div>" + "<input type='radio' name='q0' value='" + question0[k] +"' >" + question0[k] + "</div>");
 
 	// $("<div id='"+ question0[k] +"'></div>").append(a);
 	$("#"+ questionsArray[i].name).append(a);
