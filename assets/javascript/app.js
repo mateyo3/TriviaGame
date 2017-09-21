@@ -61,12 +61,40 @@ console.log(questionsArray);
 var question0 = ["two", "four", "six", "eight"];
 
 
-// randomize questions
+
+
+
+var timer;
+	clearInterval;
+//set timer interval
+function run(){
+	timer = setInterval(decrement, 1000);
+}
+
+//Decrement function
+function decrement() {
+	countdown--;
+	console.log(countdown);
+	//display timer
+	$("#timer").html("<h2>"+ countdown + "</h2>");
+
+	//gets to zero
+	if (countdown === 0){
+		stop();
+
+		//go to end page
+		$("#timer").html("<h2>Time's Up!</h2>");
+		console.log("Time is up!")
+	}
+}
+
+//Stops timer
+function stop() {
+      clearInterval(timer);
+    }
+
 
 //display questions in HTML
-
-
-
 for (i = 0; i < questionsArray.length; i++) {
 		
 	var q = $("<div class='question' id='"+ questionsArray[i].name +"'></div>")
@@ -80,16 +108,19 @@ for (i = 0; i < questionsArray.length; i++) {
 	for (k = 0; k < question0.length; k++) {
 	console.log(question0[k]);
 
-	var a = $("<div>" + "<input type='radio' name='q0' value='" + question0[k] +"' >" + question0[k] + "</div>");
+	var a = $("<div>" + "<input type='radio' name='" + question0[k] + "' value='" + question0[k] +"' >" + question0[k] + "</div>");
 
 	// $("<div id='"+ question0[k] +"'></div>").append(a);
 	$("#"+ questionsArray[i].name).append(a);
 	}
-
 }
 
 
 
+
+// $("#done").on("click") {
+
+// }
 
 
 	// for (k = 0; k < question0.length; k++) {
@@ -121,34 +152,7 @@ var correct = 0;
 	unanswered = 0;
 	countdown = 5;
 	
-var timer;
-	clearInterval;
-//set timer interval
-function run(){
-	timer = setInterval(decrement, 1000);
-}
 
-//Decrement function
-function decrement() {
-	countdown--;
-	console.log(countdown);
-	//display timer
-	$("#timer").html("<h2>"+ countdown + "</h2>");
-
-	//gets to zero
-	if (countdown === 0){
-		stop();
-
-		//go to end page
-		$("#timer").html("<h2>Time's Up!</h2>");
-		console.log("Time is up!")
-	}
-}
-
-//Stops timer
-function stop() {
-      clearInterval(timer);
-    }
 
 run();
 // stop();

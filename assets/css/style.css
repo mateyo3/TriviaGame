@@ -6,3 +6,7 @@ body{
 .container-fluid {
 	
 }
+
+h1{
+	font-color: blue;
+}
